@@ -1,11 +1,8 @@
 import pandas as pd
 from pathlib import Path
 
-from src.processing.sportvu_to_events import (
-    load_json,
-    save_json,
-    sportvu_game_to_processed_events,
-)
+from src.processing.sportvu_to_events import sportvu_game_to_processed_events
+from src.data_io.save_load import load_json, save_json
 
 def main():
     file_name = "0021500622"

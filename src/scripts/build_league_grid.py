@@ -1,7 +1,6 @@
-# scripts/build_league_grids.py
 from src.data_sources.nba_api_shots import fetch_league_shots
 from src.features.shot_grids import contested_fg_grids
-from src.io.grids import save_grids
+from src.data_io.grids import save_grids
 
 def main():
     season = "2015-16"

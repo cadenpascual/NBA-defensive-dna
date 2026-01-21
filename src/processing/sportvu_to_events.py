@@ -83,13 +83,3 @@ def sportvu_game_to_processed_events(game: dict, pbp: pd.DataFrame) -> list[dict
 
     return events_out
 
-def load_json(path: str | Path) -> dict:
-    path = Path(path)
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
-
-def save_json(obj, path: str | Path) -> None:
-    path = Path(path)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(obj, f, indent=2)
