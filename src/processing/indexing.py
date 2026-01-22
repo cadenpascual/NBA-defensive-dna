@@ -5,7 +5,8 @@ import numpy as np
 import pandas as pd
 from typing import Any, Dict, Optional, Tuple
 
-def build_tracking_event_index(tracking_events: list[dict]) -> pd.DataFrame:
+# Build a DataFrame index of tracking events with game clock spans
+def build_tracking_time_index(tracking_events: list[dict]) -> pd.DataFrame:
     rows = []
     for k, ev in enumerate(tracking_events):
         frames = ev.get("frames", [])
@@ -22,6 +23,7 @@ def build_tracking_event_index(tracking_events: list[dict]) -> pd.DataFrame:
         })
     return pd.DataFrame(rows)
 
+# Find the best matching event for a shot based on game clock
 def find_event_for_shot_by_clock(
     event_index: pd.DataFrame,
     gameid: int,
